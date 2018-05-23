@@ -1,0 +1,28 @@
+function TreeNode(val) {
+    this.val = val;
+    this.left = this.right = null;
+}
+
+let preorderTraversal = function(root) {
+    let output = [];
+    
+    if (root === null) {
+        return []; 
+    }
+
+    output.push(root.val);
+   
+    output = output.concat(preorderTraversal(root.left));
+    output = output.concat(preorderTraversal(root.right));
+
+   return output;
+}
+
+let treeA = new TreeNode(1);
+let treeARightBranch = treeA.right = new TreeNode(3);
+let treeBLeftBranch = treeA.left = new TreeNode(2);
+
+console.log(preorderTraversal(treeA));
+
+//TC O(n)
+//SC O(n)
