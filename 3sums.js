@@ -38,3 +38,7 @@ function sums(arr) {
         }
         return output;
     }
+
+
+    let test = [-1, 0, 1, 2, -1, -4];
+    
